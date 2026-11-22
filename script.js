@@ -1,152 +1,249 @@
 /*=========================================================
-                PORTFOLIO JAVASCRIPT
+                PORTFOLIO JAVASCRIPT - PART 1
 =========================================================*/
 
-(function () {
-    "use strict";
+/*==============================
+    MOBILE MENU
+==============================*/
 
-    var reduceMotion = window.matchMedia &&
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const menuIcon = document.querySelector('.menu-icon');
+const navbar = document.querySelector('.navbar');
 
-    /*==============================
-        MOBILE MENU
-    ==============================*/
+if (menuIcon) {
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    };
+}
 
-    var menuButton = document.querySelector(".menu-icon");
-    var navbar = document.querySelector(".navbar");
-    var navLinks = document.querySelectorAll("header nav a");
+/*==============================
+    STICKY HEADER
+==============================*/
 
-    function setMenu(open) {
-        if (!menuButton || !navbar) return;
-        navbar.classList.toggle("active", open);
-        menuButton.setAttribute("aria-expanded", String(open));
-        menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+window.addEventListener('scroll', () => {
+
+    const header = document.querySelector('.header');
+
+    if (header) {
+        header.classList.toggle('sticky', window.scrollY > 100);
     }
 
-    if (menuButton && navbar) {
-        menuButton.addEventListener("click", function () {
-            setMenu(!navbar.classList.contains("active"));
-        });
+});
 
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape" && navbar.classList.contains("active")) {
-                setMenu(false);
-                menuButton.focus();
-            }
-        });
+/*==============================
+    ACTIVE NAVIGATION LINK
+==============================*/
 
-        window.addEventListener("resize", function () {
-            if (window.innerWidth > 860) setMenu(false);
-        });
-    }
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
 
-    navLinks.forEach(function (link) {
-        link.addEventListener("click", function () { setMenu(false); });
+window.addEventListener('scroll', () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+
     });
 
-    /*==============================
-        ACTIVE NAVIGATION LINK
-    ==============================*/
+    navLinks.forEach(link => {
 
-    var sections = document.querySelectorAll("section[id]");
+        link.classList.remove("active");
 
-    function updateActiveLink() {
-        var current = "home";
+        if (link.getAttribute("href") === "#" + current) {
 
-        sections.forEach(function (section) {
-            if (window.scrollY >= section.offsetTop - 150) {
-                current = section.getAttribute("id");
-            }
-        });
+            link.classList.add("active");
 
-        navLinks.forEach(function (link) {
-            link.classList.toggle("active", link.getAttribute("href") === "#" + current);
-        });
-    }
+        }
 
-    window.addEventListener("scroll", updateActiveLink, { passive: true });
-    updateActiveLink();
+    });
 
-    /*==============================
-        SCROLL REVEAL ANIMATION
-        (skipped if the library fails to load
-         or the visitor prefers reduced motion)
-    ==============================*/
+});
 
-    if (typeof ScrollReveal !== "undefined" && !reduceMotion) {
-        var sr = ScrollReveal({
-            reset: false,
-            distance: "60px",
-            duration: 1400,
-            delay: 150
-        });
+/*==============================
+    CLOSE MENU AFTER CLICK
+==============================*/
 
-        sr.reveal(".home-content", { origin: "left" });
-        sr.reveal(".home-image", { origin: "right" });
-        sr.reveal(".about-container, .skills-container, .projects-container, .learning-container, .education-card, .contact-info, .contact form", { origin: "bottom" });
-        sr.reveal(".section-title", { origin: "top" });
-    }
+navLinks.forEach(link => {
 
-    /*==============================
-        TYPING EFFECT
-    ==============================*/
+    link.addEventListener("click", () => {
 
-    if (typeof Typed !== "undefined" && !reduceMotion && document.querySelector(".multiple-text")) {
-        new Typed(".multiple-text", {
-            strings: [
-                "Aspiring Embedded Systems Engineer",
-                "Robotics Enthusiast",
-                "Edge AI Learner"
-            ],
-            typeSpeed: 80,
-            backSpeed: 50,
-            backDelay: 1400,
-            loop: true
-        });
-    }
+        if (navbar) {
 
-    /*==============================
-        CONTACT FORM
-        Opens the visitor's email app with the message filled in.
-    ==============================*/
+            navbar.classList.remove("active");
 
-    var form = document.getElementById("contact-form");
+        }
 
-    if (form) {
-        var note = document.createElement("p");
-        note.className = "form-note";
-        note.setAttribute("role", "status");
-        form.appendChild(note);
+        if (menuIcon) {
 
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
+            menuIcon.classList.remove("bx-x");
 
-            var fields = form.querySelectorAll("input, textarea");
-            var valid = true;
+        }
 
-            fields.forEach(function (field) {
-                var empty = field.required && field.value.trim() === "";
-                field.classList.toggle("invalid", empty);
-                if (empty) valid = false;
+    });
+
+});
+
+/*==============================
+    SCROLL REVEAL ANIMATION
+==============================*/
+
+ScrollReveal({
+
+    reset: false,
+
+    distance: "80px",
+
+    duration: 2000,
+
+    delay: 200
+
+});
+
+ScrollReveal().reveal('.home-content', {
+
+    origin: 'left'
+
+});
+ScrollReveal().reveal('.home-image', {
+    origin: 'right'
+});
+
+ScrollReveal().reveal('.about-content, .skills-container, .projects-container, .contact-container', {
+    origin: 'bottom'
+});
+
+ScrollReveal().reveal('.section-title', {
+    origin: 'top'
+});
+
+/*==============================
+    TYPING EFFECT
+==============================*/
+
+new Typed(".multiple-text", {
+    strings: [
+        "Python Developer",
+        "Data Analytics Enthusiast",
+        "Full Stack Learner"
+    ],
+    typeSpeed: 100,
+    backSpeed: 80,
+    backDelay: 1200,
+    loop: true
+});
+/*=========================================================
+                PORTFOLIO JAVASCRIPT - PART 2
+=========================================================*/
+
+/*==============================
+    SMOOTH SCROLLING
+==============================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            target.scrollIntoView({
+
+                behavior: "smooth"
+
             });
 
-            if (!valid) {
-                note.textContent = "Please fill in your name, email and message.";
-                return;
-            }
+        }
 
-            var name = form.elements.name.value.trim();
-            var email = form.elements.email.value.trim();
-            var subject = form.elements.subject.value.trim() || "Portfolio contact from " + name;
-            var message = form.elements.message.value.trim();
+    });
 
-            var body = message + "\n\nFrom: " + name + " (" + email + ")";
+});
 
-            window.location.href = "mailto:aravindaajay4@gmail.com" +
-                "?subject=" + encodeURIComponent(subject) +
-                "&body=" + encodeURIComponent(body);
+/*==============================
+    BACK TO TOP BUTTON
+==============================*/
 
-            note.textContent = "Opening your email app. If nothing opens, email aravindaajay4@gmail.com directly.";
-        });
+const backToTop = document.createElement("button");
+
+backToTop.innerHTML = "↑";
+
+backToTop.className = "back-to-top";
+
+document.body.appendChild(backToTop);
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+
+        backToTop.classList.add("show");
+
+    } else {
+
+        backToTop.classList.remove("show");
+
     }
-})();
+
+});
+
+backToTop.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+/*==============================
+    CONTACT FORM VALIDATION
+==============================*/
+
+const form = document.querySelector("form");
+
+if (form) {
+
+    form.addEventListener("submit", function(e) {
+
+        const inputs = form.querySelectorAll("input, textarea");
+
+        let valid = true;
+
+        inputs.forEach(input => {
+
+            if (input.value.trim() === "") {
+
+                valid = false;
+
+                input.style.border = "2px solid red";
+
+            } else {
+
+                input.style.border = "";
+
+}
+
+});
+
+if (!valid) {
+
+    e.preventDefault();
+
+    alert("Please fill all fields.");
+
+}
+
+});
+
+}
