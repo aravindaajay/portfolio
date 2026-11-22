@@ -3,444 +3,388 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1220">
+    <meta name="description" content="Ramolla Aravind, an aspiring Embedded Systems, Robotics and Edge AI engineer. Electronics and Communication Engineering graduate (2026).">
 
-    <title>Aravind | Portfolio</title>
+    <title>Ramolla Aravind | Embedded Systems, Robotics &amp; Edge AI</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Boxicons -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- Inline icon sprite: no external icon font needed -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 5.5h18v13H3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
+    </svg>
 
-    <header class="header">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <a href="#" class="logo">
-            Aravind
-        </a>
+    <!-- ================= HEADER ================= -->
+    <header class="header" id="top">
+        <a href="#home" class="logo" aria-label="Ramolla Aravind, home">R. Aravind</a>
 
-        <nav class="navbar">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
 
-            <a href="#home" class="active">Home</a>
+        <nav class="navbar" id="site-nav" aria-label="Main">
+            <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
             <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#learning">Learning</a>
             <a href="#contact">Contact</a>
-
         </nav>
-
-        <div class="menu-icon">
-            <i class='bx bx-menu'></i>
-        </div>
-
     </header>
 
-    <!-- ================= HOME SECTION ================= -->
+    <main id="main">
 
-    <section class="home" id="home">
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
 
-        <div class="home-content">
+                <div class="hero-copy">
+                    <h1>Ramolla Aravind</h1>
+                    <p class="headline">
+                        Embedded Systems <span class="pipe" aria-hidden="true">|</span>
+                        Robotics <span class="pipe" aria-hidden="true">|</span>
+                        Edge AI Engineer
+                    </p>
+                    <p class="status-line">Aspiring engineer, actively building practical skills</p>
 
-       <h3>Hello, It's Me</h3>
+                    <p class="intro">
+                        I am an Electronics and Communication Engineering graduate passionate about Embedded Systems, Robotics and Edge AI. I am interested in developing intelligent hardware systems that combine programming, electronics, sensors and artificial intelligence.
+                    </p>
+                    <p class="intro">
+                        My goal is to build practical robotic systems and deploy intelligent AI models on edge devices. I continuously explore embedded programming, microcontrollers, computer vision and real-time applications.
+                    </p>
 
-<h1>Ramolla Aravind</h1>
-
-<h3>And I'm a <span class="multiple-text"></span></h3>
-
-<p>
-I am a passionate Python Developer and Data Analytics enthusiast with a strong interest in building practical software solutions. I enjoy working with Python, SQL, Power BI, Excel, and MongoDB while continuously learning modern full-stack development technologies.
-</p>
-<div class="social-media">
-
-<a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-
-<a href="#" target="_blank"><i class='bx bxl-github'></i></a>
-
-<a href="mailto:yourmail@gmail.com"><i class='bx bx-envelope'></i></a>
-
-</div>
-<a href="resume.pdf" class="btn" download>
-Download Resume
-</a>
-
-            <div class="hero-buttons">
-
-                <a href="#projects" class="btn">
-                    View Projects
-                </a>
-
-                <a href="#contact" class="btn btn-outline">
-                    Contact Me
-                </a>
-
-            </div>
-
-            <div class="social-icons">
-
-                <a href="#">
-                    <i class='bx bxl-linkedin'></i>
-                </a>
-
-                <a href="#">
-                    <i class='bx bxl-github'></i>
-                </a>
-
-                <a href="#">
-                    <i class='bx bxl-instagram'></i>
-                </a>
-
-                <a href="#">
-                    <i class='bx bxl-gmail'></i>
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="home-image">
-<img src="Profile" alt="Ramolla Aravind">
-
-        </div>
-
-    </section>
-
-    <!-- ================= ABOUT ================= -->
-
-    <section class="about" id="about">
-
-        <div class="section-title">
-
-            <h2>About Me</h2>
-
-        </div>
-
-        <div class="about-container">
-
-            <div class="about-image">
-
-<img src="Profile" alt="Ramolla Aravind">
-
-            </div>
-
-            <div class="about-content">
-
-                <h3>Who Am I?</h3>
-
-                <p>
-
-                    Hi, I'm Aravind, a software enthusiast with a strong passion
-                    for building practical and impactful solutions through
-                    technology.
-
-                </p>
-
-                <p>
-
-                    I completed my Bachelor of Technology in
-                    Electronics and Communication Engineering
-                    with a CGPA of 7.48.
-
-                </p>
-
-                <p>
-
-                    My technical interests include Python,
-                    SQL, Microsoft Excel, Power BI,
-                    MongoDB, and Full Stack Web Development.
-
-                </p>
-
-                <p>
-
-                    I believe in continuous learning,
-                    writing clean code,
-                    and improving my technical skills
-                    through meaningful projects.
-
-                </p>
-
-                <div class="about-info">
-
-                    <div class="info-box">
-
-                        <h4>Name</h4>
-                        <span>Ramolla Aravind</span>
-
+                    <div class="actions">
+                        <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+                        <a href="#projects" class="btn btn-secondary">View Projects</a>
                     </div>
 
-                    <div class="info-box">
+                    <ul class="social" aria-label="Profiles">
+                        <li><a href="https://github.com/aravindaajay" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><svg><use href="#i-github"/></svg></a></li>
+                        <li><a href="https://www.linkedin.com/in/ramolla-aravind-b680972bb" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg><use href="#i-linkedin"/></svg></a></li>
+                        <li><a href="mailto:aravindaajay4@gmail.com" aria-label="Email Ramolla Aravind"><svg><use href="#i-mail"/></svg></a></li>
+                    </ul>
+                </div>
 
-                        <h4>Qualification</h4>
-                        <span>B.Tech (ECE)</span>
-
+                <div class="hero-board">
+                    <!-- Decorative PCB-style traces that draw in once on load -->
+                    <svg class="traces" viewBox="0 0 520 520" aria-hidden="true" focusable="false">
+                        <path pathLength="1" d="M0 96 H90 V40 H230" />
+                        <path pathLength="1" d="M520 150 H440 V70 H340" />
+                        <path pathLength="1" d="M0 430 H70 V486 H200" />
+                        <path pathLength="1" d="M520 420 H450 V490 H320" />
+                        <circle cx="230" cy="40" r="4" />
+                        <circle cx="340" cy="70" r="4" />
+                        <circle cx="200" cy="486" r="4" />
+                        <circle cx="320" cy="490" r="4" />
+                    </svg>
+                    <div class="photo-frame">
+                        <img src="Profile.jpeg" alt="Portrait of Ramolla Aravind" width="1254" height="1254" fetchpriority="high">
                     </div>
-
-                    <div class="info-box">
-
-                        <h4>CGPA</h4>
-                        <span>7.48</span>
-
-                    </div>
-
-                    <div class="info-box">
-
-                        <h4>Current Focus</h4>
-                        <span>Python Full Stack Development</span>
-
-                    </div>
-
                 </div>
 
             </div>
+        </section>
 
-        </div>
+        <!-- ================= ABOUT ================= -->
+        <section class="section" id="about">
+            <div class="container">
+                <h2>About me</h2>
 
-    </section>
+                <div class="about-grid">
+                    <div class="prose">
+                        <p>
+                            I completed my B.Tech in Electronics and Communication Engineering in 2026. Studying circuits, signals and communication gave me a solid base in how hardware behaves. What holds my attention most is the point where hardware meets software: firmware that reads a sensor, a controller that drives a motor, a model that runs on a small board instead of a server.
+                        </p>
+                        <p>
+                            My final-year project applied a Vision Transformer to image denoising, which pushed me toward computer vision and toward the question of what it takes to run AI on constrained devices. Alongside that, I am learning embedded C and C++, microcontrollers and Raspberry Pi, and practising robotics with Arduino.
+                        </p>
+                        <p>
+                            I am early in my career and treat every project as a chance to build real, working skills.
+                        </p>
+                    </div>
 
-    <!-- ================= PART 2 CONTINUES ================= -->
-     <!-- ================= SKILLS ================= -->
-
-    <section class="skills" id="skills">
-        
-
-    <h2 class="section-title">My <span>Skills</span></h2>
-
-    <div class="skills-container">
-
-        <div class="skill-card">
-            <i class='bx bxl-python'></i>
-            <h3>Python</h3>
-            <p>Strong understanding of Python fundamentals, problem-solving, file handling, functions, OOP concepts, and basic automation.</p>
-        </div>
-
-        <div class="skill-card">
-            <i class='bx bx-data'></i>
-            <h3>SQL</h3>
-            <p>Experienced in writing SQL queries, joins, aggregate functions, filtering data, and database management.</p>
-        </div>
-
-        <div class="skill-card">
-            <i class='bx bxs-bar-chart-alt-2'></i>
-            <h3>Power BI</h3>
-            <p>Creating interactive dashboards, reports, visualizations, KPIs, and business insights using Power BI.</p>
-        </div>
-
-        <div class="skill-card">
-            <i class='bx bxs-spreadsheet'></i>
-            <h3>Microsoft Excel</h3>
-            <p>Skilled in formulas, Pivot Tables, charts, data cleaning, sorting, filtering, and data analysis.</p>
-        </div>
-
-        <div class="skill-card">
-            <i class='bx bxl-mongodb'></i>
-            <h3>MongoDB</h3>
-            <p>Knowledge of NoSQL databases, collections, documents, CRUD operations, and database connectivity.</p>
-        </div>
-
-        <div class="skill-card">
-            <i class='bx bx-code-alt'></i>
-            <h3>Currently Learning</h3>
-            <p>Python Full Stack Web Development including HTML, CSS, JavaScript, Flask, APIs, and modern web technologies.</p>
-        </div>
-
-    </div>
-
-</section>
- <section class="education" id="education">
-
-    <h2 class="section-title">My <span>Education</span></h2>
-
-    <div class="education-card">
-
-        <h3>Bachelor of Technology (B.Tech)</h3>
-
-        <h4>Electronics and Communication Engineering</h4>
-
-        <p class="college">
-            Siddartha Institute of Science and Technology
-        </p>
-
-        <p class="duration">
-            2022 - 2026
-        </p>
-
-        <p class="cgpa">
-            CGPA: <strong>7.48 / 10</strong>
-        </p>
-
-        <p class="education-desc">
-            Successfully completed my Bachelor's degree in Electronics and Communication Engineering with a strong academic foundation. Alongside my coursework, I developed practical skills in Python, SQL, Microsoft Excel, Power BI, and MongoDB, and I am currently learning Full Stack Web Development.
-        </p>
-
-    </div>
-
-</section>
-<section class="projects" id="projects">
-
-    <h2 class="section-title">My <span>Projects</span></h2>
-
-    <div class="projects-container">
-
-        <div class="project-card">
-
-            <i class='bx bx-brain'></i>
-
-            <h3>Hybrid Filters Image Denoising Extended with Vision Transformer</h3>
-
-            <p>
-                Developed an AI-powered image denoising system using Hybrid Filters,
-                Non-Local Means (NLM), and Vision Transformer to remove image noise
-                while preserving edges, textures, and fine details.
-            </p>
-
-            <div class="tech-stack">
-                <span>Python</span>
-                <span>MATLAB</span>
-                <span>OpenCV</span>
-                <span>Vision Transformer</span>
-                <span>NLM</span>
-            </div>
-
-            <a href="#" class="btn">View Project</a>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ================= PROJECTS ================= -->
-
-<section class="projects" id="projects">
-
-    <h2 class="section-title">My <span>Projects</span></h2>
-
-    <div class="projects-container">
-
-        <!-- Project 1 -->
-
-        <div class="project-card">
-
-            <i class='bx bx-brain'></i>
-
-            <h3>Hybrid and Non-Local Means Image Denoising Enhanced with Vision Transformer</h3>
-
-            <p>
-                Developed an AI-powered image denoising framework using Hybrid Filtering,
-                Non-Local Means (NLM), and Vision Transformer (ViT). The system improves
-                image quality by reducing Gaussian, Salt & Pepper, and Speckle noise while
-                preserving edges and textures. Performance was evaluated using PSNR and
-                SSIM metrics.
-            </p>
-
-            <div class="tech-stack">
-                <span>Python</span>
-                <span>MATLAB</span>
-                <span>OpenCV</span>
-                <span>Vision Transformer</span>
-                <span>NLM</span>
-            </div>
-
-        </div>
-
-        <!-- Project 2 -->
-
-        <div class="project-card">
-
-            <i class='bx bx-bar-chart-alt-2'></i>
-
-            <h3>Pizza Sales Analytics Dashboard</h3>
-
-            <p>
-                Built an interactive sales analytics dashboard using SQL, Power BI, and
-                Microsoft Excel. Analyzed more than 50,000 sales records to identify KPIs,
-                revenue trends, top-selling pizzas, category performance, and customer
-                purchasing patterns for business insights.
-            </p>
-
-            <div class="tech-stack">
-                <span>SQL</span>
-                <span>Power BI</span>
-                <span>Excel
+                    <dl class="focus-list">
+                        <div>
+                            <dt>Embedded Systems</dt>
+                            <dd>Firmware that talks directly to hardware.</dd>
+                        </div>
+                        <div>
+                            <dt>Robotics</dt>
+                            <dd>Sensing, control and movement working together.</dd>
+                        </div>
+                        <div>
+                            <dt>Microcontrollers</dt>
+                            <dd>Arduino today, ARM and STM32 next.</dd>
+                        </div>
+                        <div>
+                            <dt>Computer Vision</dt>
+                            <dd>Teaching machines to interpret images and video.</dd>
+                        </div>
+                        <div>
+                            <dt>Edge AI</dt>
+                            <dd>Running models on small, low-power devices.</dd>
+                        </div>
+                        <div>
+                            <dt>Hardware-software integration</dt>
+                            <dd>Making electronics and code behave as one system.</dd>
+                        </div>
+                    </dl>
                 </div>
-                
+            </div>
+        </section>
 
-                </section>
-                    <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me</span></h2>
+        <!-- ================= SKILLS ================= -->
+        <section class="section section-alt" id="skills">
+            <div class="container">
+                <h2>Technical skills</h2>
+                <p class="section-lead">Skills are split by honest level: what I can already use, and what I am still learning.</p>
 
-    <div class="contact-info">
-        <p><strong>Email:</strong> aravindaajay4@gmail.com</p>
-        <p><strong>Phone:</strong> +91 8074149400</p>
-        <p><strong>Location:</strong> Andhra Pradesh, India</p>
-    </div>
+                <ul class="legend" aria-label="Legend">
+                    <li><span class="chip known"><i aria-hidden="true"></i>Working knowledge</span></li>
+                    <li><span class="chip learning"><i aria-hidden="true"></i>Currently learning</span></li>
+                </ul>
 
-    <form action="#">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Subject">
-        <textarea rows="6" placeholder="Your Message"></textarea>
-        <button type="submit" class="btn">Send Message</button>
-    </form>
-</section>
+                <div class="skill-rows">
+
+                    <div class="skill-row">
+                        <h3>Programming</h3>
+                        <ul class="chips">
+                            <li class="chip known"><i aria-hidden="true"></i>Python</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>C</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>C++</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-row">
+                        <h3>Embedded systems</h3>
+                        <ul class="chips">
+                            <li class="chip learning"><i aria-hidden="true"></i>Arduino</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>Microcontrollers</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>Embedded C</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>PWM</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>GPIO</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>UART</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>SPI</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>I2C</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-row">
+                        <h3>Robotics</h3>
+                        <ul class="chips">
+                            <li class="chip learning"><i aria-hidden="true"></i>Sensors and actuators</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>Servo motors</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>Ultrasonic sensors</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>Robot control systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-row">
+                        <h3>AI and computer vision</h3>
+                        <ul class="chips">
+                            <li class="chip known"><i aria-hidden="true"></i>Machine Learning</li>
+                            <li class="chip known"><i aria-hidden="true"></i>Deep Learning</li>
+                            <li class="chip known"><i aria-hidden="true"></i>OpenCV</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>YOLO</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>Edge AI</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-row">
+                        <h3>Tools and platforms</h3>
+                        <ul class="chips">
+                            <li class="chip known"><i aria-hidden="true"></i>Git and GitHub</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>Raspberry Pi</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>Arduino IDE</li>
+                            <li class="chip learning"><i aria-hidden="true"></i>Linux</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS ================= -->
+        <section class="section" id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <p class="section-lead">One completed project, one in progress, and two planned. Solid outlines are finished work; dashed outlines are not finished yet.</p>
+
+                <div class="project-grid">
+
+                    <article class="project done">
+                        <div class="project-head">
+                            <h3>Vision Transformer: Final Year Project</h3>
+                            <span class="status status-done">Completed</span>
+                        </div>
+                        <p>
+                            Image denoising framework that combines hybrid filtering, Non-Local Means (NLM) and a Vision Transformer to reduce Gaussian, salt-and-pepper and speckle noise while preserving edges and textures. Quality was evaluated with PSNR and SSIM.
+                        </p>
+                        <ul class="tags" aria-label="Technologies used">
+                            <li>Python</li>
+                            <li>MATLAB</li>
+                            <li>OpenCV</li>
+                            <li>Vision Transformer</li>
+                            <li>Non-Local Means</li>
+                        </ul>
+                        <!-- Add a GitHub link here when the repository is public:
+                             <a class="project-link" href="https://github.com/aravindaajay/REPO" target="_blank" rel="noopener noreferrer">View on GitHub</a> -->
+                    </article>
+
+                    <article class="project ongoing">
+                        <div class="project-head">
+                            <h3>Arduino-based Robotics Projects</h3>
+                            <span class="status status-ongoing">Ongoing</span>
+                        </div>
+                        <p>
+                            Learning and development work with Arduino: practising how sensors, actuators and code fit together, including servo control with PWM, ultrasonic distance sensing and simple robot control logic.
+                        </p>
+                        <ul class="tags" aria-label="Technologies used">
+                            <li>Arduino</li>
+                            <li>Embedded C</li>
+                            <li>PWM</li>
+                            <li>GPIO</li>
+                            <li>Servo motors</li>
+                            <li>Ultrasonic sensors</li>
+                        </ul>
+                    </article>
+
+                    <article class="project planned">
+                        <div class="project-head">
+                            <h3>Six-Legged Spider Robot</h3>
+                            <span class="status status-planned">Planned</span>
+                        </div>
+                        <p>
+                            A hexapod walking robot I plan to build, covering the leg mechanism, servo control from a microcontroller and a walking gait.
+                        </p>
+                        <ul class="tags" aria-label="Technologies planned">
+                            <li>Microcontrollers</li>
+                            <li>Servo motors</li>
+                            <li>Robot control systems</li>
+                        </ul>
+                    </article>
+
+                    <article class="project planned">
+                        <div class="project-head">
+                            <h3>Computer Vision and Edge AI Projects</h3>
+                            <span class="status status-planned">Planned</span>
+                        </div>
+                        <p>
+                            Future development: object detection with YOLO and OpenCV, then deploying the models to run on edge hardware such as the Raspberry Pi.
+                        </p>
+                        <ul class="tags" aria-label="Technologies planned">
+                            <li>YOLO</li>
+                            <li>OpenCV</li>
+                            <li>Raspberry Pi</li>
+                            <li>Python</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EDUCATION ================= -->
+        <section class="section section-alt" id="education">
+            <div class="container">
+                <h2>Education</h2>
+
+                <div class="edu">
+                    <div>
+                        <h3>Bachelor of Technology (B.Tech)</h3>
+                        <p class="edu-major">Electronics and Communication Engineering (ECE)</p>
+                        <p class="edu-school">Siddartha Institute of Science and Technology, Andhra Pradesh, India</p>
+                    </div>
+                    <dl class="edu-facts">
+                        <div><dt>CGPA</dt><dd>7.48 / 10</dd></div>
+                        <div><dt>Graduation</dt><dd>2026</dd></div>
+                        <div><dt>Duration</dt><dd>2022 to 2026</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= LEARNING JOURNEY ================= -->
+        <section class="section" id="learning">
+            <div class="container">
+                <h2>Learning journey</h2>
+                <p class="section-lead">The topics I am working through on the way to becoming a Robotics and Edge AI engineer.</p>
+
+                <div class="learn-grid">
+                    <div class="learn">
+                        <h3>Firmware and architecture</h3>
+                        <ul>
+                            <li>Embedded C and C++</li>
+                            <li>ARM architecture</li>
+                            <li>STM32 microcontrollers</li>
+                        </ul>
+                    </div>
+                    <div class="learn">
+                        <h3>Boards and operating systems</h3>
+                        <ul>
+                            <li>Arduino and Raspberry Pi</li>
+                            <li>Embedded Linux</li>
+                        </ul>
+                    </div>
+                    <div class="learn">
+                        <h3>Vision and AI</h3>
+                        <ul>
+                            <li>Computer Vision</li>
+                            <li>YOLO object detection</li>
+                            <li>Edge AI deployment</li>
+                        </ul>
+                    </div>
+                    <div class="learn">
+                        <h3>Robotics</h3>
+                        <ul>
+                            <li>Robotics and automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section class="section section-alt" id="contact">
+            <div class="container contact-grid">
+                <div>
+                    <h2>Contact</h2>
+                    <p class="section-lead">I am looking for opportunities to learn and build in embedded systems, robotics and edge AI. Email is the best way to reach me.</p>
+                    <a class="btn btn-primary" href="mailto:aravindaajay4@gmail.com">Send an email</a>
+                </div>
+
+                <dl class="contact-list">
+                    <div><dt>Email</dt><dd><a href="mailto:aravindaajay4@gmail.com">aravindaajay4@gmail.com</a></dd></div>
+                    <div><dt>Phone</dt><dd><a href="tel:+918074149400">+91 8074149400</a></dd></div>
+                    <div><dt>Location</dt><dd>Andhra Pradesh, India</dd></div>
+                    <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/ramolla-aravind-b680972bb" target="_blank" rel="noopener noreferrer">linkedin.com/in/ramolla-aravind-b680972bb</a></dd></div>
+                    <div><dt>GitHub</dt><dd><a href="https://github.com/aravindaajay" target="_blank" rel="noopener noreferrer">github.com/aravindaajay</a></dd></div>
+                </dl>
+            </div>
+        </section>
+
+    </main>
 
     <!-- ================= FOOTER ================= -->
-
     <footer class="footer">
-
-        <div class="footer-content">
-
-            <h2>Ramolla Aravind</h2>
-
-            <p>
-                Thank you for visiting my portfolio.
-                Let's build something amazing together.
-            </p>
-
-            <div class="footer-social">
-
-                <a href="https://www.linkedin.com/in/ramolla-aravind-b680972bb"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/aravindaajay"><i class='bx bxl-github'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="mailto:aravindaajay4@gmail.com"><i class='bx bx-envelope'></i></a>
-
-            </div>
-
-            <p class="copyright">
-
-                © 2026 Ramolla Aravind. All Rights Reserved.
-
-            </p>
-
+        <div class="container footer-inner">
+            <p>&copy; 2026 Ramolla Aravind</p>
+            <a href="#top">Back to top</a>
         </div>
-
     </footer>
 
-    <!-- JavaScript -->
-     <!-- ScrollReveal JS -->
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-
-<!-- Typed.js -->
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-<!-- Your JavaScript -->
-<script src="script.js"></script>
-
-    
-
+    <script src="script.js"></script>
 </body>
 
 </html>
