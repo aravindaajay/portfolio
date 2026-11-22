@@ -1,70 +1,152 @@
-/* Portfolio behaviour: mobile menu and active navigation link.
-   No external libraries. */
+/*=========================================================
+                PORTFOLIO JAVASCRIPT
+=========================================================*/
 
 (function () {
     "use strict";
 
-    var toggle = document.querySelector(".menu-toggle");
-    var nav = document.getElementById("site-nav");
-    var links = Array.prototype.slice.call(document.querySelectorAll(".navbar a"));
+    var reduceMotion = window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    /* ---------- Mobile menu ---------- */
+    /*==============================
+        MOBILE MENU
+    ==============================*/
+
+    var menuButton = document.querySelector(".menu-icon");
+    var navbar = document.querySelector(".navbar");
+    var navLinks = document.querySelectorAll("header nav a");
 
     function setMenu(open) {
-        if (!toggle || !nav) return;
-        nav.classList.toggle("open", open);
-        toggle.setAttribute("aria-expanded", String(open));
-        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        if (!menuButton || !navbar) return;
+        navbar.classList.toggle("active", open);
+        menuButton.setAttribute("aria-expanded", String(open));
+        menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     }
 
-    if (toggle && nav) {
-        toggle.addEventListener("click", function () {
-            setMenu(toggle.getAttribute("aria-expanded") !== "true");
-        });
-
-        links.forEach(function (link) {
-            link.addEventListener("click", function () { setMenu(false); });
+    if (menuButton && navbar) {
+        menuButton.addEventListener("click", function () {
+            setMenu(!navbar.classList.contains("active"));
         });
 
         document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape" && nav.classList.contains("open")) {
+            if (e.key === "Escape" && navbar.classList.contains("active")) {
                 setMenu(false);
-                toggle.focus();
+                menuButton.focus();
             }
         });
 
         window.addEventListener("resize", function () {
-            if (window.innerWidth > 760) setMenu(false);
+            if (window.innerWidth > 860) setMenu(false);
         });
     }
 
-    /* ---------- Active link while scrolling ---------- */
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function () { setMenu(false); });
+    });
 
-    var sections = links
-        .map(function (link) {
-            var id = link.getAttribute("href").slice(1);
-            return document.getElementById(id);
-        })
-        .filter(Boolean);
+    /*==============================
+        ACTIVE NAVIGATION LINK
+    ==============================*/
 
-    function setActive(id) {
-        links.forEach(function (link) {
-            var on = link.getAttribute("href") === "#" + id;
-            link.classList.toggle("active", on);
-            if (on) link.setAttribute("aria-current", "true");
-            else link.removeAttribute("aria-current");
+    var sections = document.querySelectorAll("section[id]");
+
+    function updateActiveLink() {
+        var current = "home";
+
+        sections.forEach(function (section) {
+            if (window.scrollY >= section.offsetTop - 150) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(function (link) {
+            link.classList.toggle("active", link.getAttribute("href") === "#" + current);
         });
     }
 
-    if ("IntersectionObserver" in window && sections.length) {
-        var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) setActive(entry.target.id);
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    updateActiveLink();
+
+    /*==============================
+        SCROLL REVEAL ANIMATION
+        (skipped if the library fails to load
+         or the visitor prefers reduced motion)
+    ==============================*/
+
+    if (typeof ScrollReveal !== "undefined" && !reduceMotion) {
+        var sr = ScrollReveal({
+            reset: false,
+            distance: "60px",
+            duration: 1400,
+            delay: 150
+        });
+
+        sr.reveal(".home-content", { origin: "left" });
+        sr.reveal(".home-image", { origin: "right" });
+        sr.reveal(".about-container, .skills-container, .projects-container, .learning-container, .education-card, .contact-info, .contact form", { origin: "bottom" });
+        sr.reveal(".section-title", { origin: "top" });
+    }
+
+    /*==============================
+        TYPING EFFECT
+    ==============================*/
+
+    if (typeof Typed !== "undefined" && !reduceMotion && document.querySelector(".multiple-text")) {
+        new Typed(".multiple-text", {
+            strings: [
+                "Aspiring Embedded Systems Engineer",
+                "Robotics Enthusiast",
+                "Edge AI Learner"
+            ],
+            typeSpeed: 80,
+            backSpeed: 50,
+            backDelay: 1400,
+            loop: true
+        });
+    }
+
+    /*==============================
+        CONTACT FORM
+        Opens the visitor's email app with the message filled in.
+    ==============================*/
+
+    var form = document.getElementById("contact-form");
+
+    if (form) {
+        var note = document.createElement("p");
+        note.className = "form-note";
+        note.setAttribute("role", "status");
+        form.appendChild(note);
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            var fields = form.querySelectorAll("input, textarea");
+            var valid = true;
+
+            fields.forEach(function (field) {
+                var empty = field.required && field.value.trim() === "";
+                field.classList.toggle("invalid", empty);
+                if (empty) valid = false;
             });
-        }, { rootMargin: "-45% 0px -50% 0px" });
 
-        sections.forEach(function (section) { observer.observe(section); });
+            if (!valid) {
+                note.textContent = "Please fill in your name, email and message.";
+                return;
+            }
+
+            var name = form.elements.name.value.trim();
+            var email = form.elements.email.value.trim();
+            var subject = form.elements.subject.value.trim() || "Portfolio contact from " + name;
+            var message = form.elements.message.value.trim();
+
+            var body = message + "\n\nFrom: " + name + " (" + email + ")";
+
+            window.location.href = "mailto:aravindaajay4@gmail.com" +
+                "?subject=" + encodeURIComponent(subject) +
+                "&body=" + encodeURIComponent(body);
+
+            note.textContent = "Opening your email app. If nothing opens, email aravindaajay4@gmail.com directly.";
+        });
     }
-
-    setActive("home");
 })();
